@@ -1,0 +1,34 @@
+.hero {
+    padding: 5.6vw;
+    min-height: 80vw;
+    background-image: url(../images/carros_desktop.webp);
+    text-align: center;
+    background-size: cover;
+
+    &__content {
+        max-width: 640px;
+    }
+
+    .button {
+        margin-top: 2vw;
+        margin-bottom: 8px;
+    }
+
+    &__branding {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .title--small {
+        margin-bottom: 64px;
+    }
+
+    p {
+        margin-bottom: 20px;
+
+        &:last-child {
+            margin-top: 60px;
+        }
+    }
+}
+
