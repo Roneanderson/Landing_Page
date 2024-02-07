@@ -1,5 +1,69 @@
-$bgcolor: red;
+@use 'header';
+@use 'variaveis';
+@use 'hero';
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+@mixin text($fontSize: 16px) {
+    font-size: $fontSize;
+    line-height: 1.6px;
+    color: variaveis.$corTextoPrincipal;
+}
+
+.text--small {
+    @include text(12px);
+}
+.text--big {
+    @include text(20px);
+}
 
 body {
-    background-color: $bgcolor;
+    color: silver;
+    background-color: variaveis.$corDeFundo;
+    display: block;
+    font-size: 14px;
 }
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    padding: 0 20px;
+    height: 56px;
+    color: variaveis.$corTextoSecundario;
+    background-color: variaveis.$corBotaoPrimario;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: all .3s ease-in-out 0s;
+    letter-spacing: 1px;
+    border: 1px solid variaveis.$corBotaoPrimario;
+
+
+    &--secondary {
+        background-color: variaveis.$corBotaoSecundario;
+        border-color: variaveis.$corBotaoSecundario;
+
+        &:hover {
+            background-color: lighten(variaveis.$corBotaoSecundario, 10%);
+        }
+
+    }
+
+    &--dark {
+        background-color: rgba(variaveis.$corBotaoDark, 0.8);
+        border-color: variaveis.$corTextoSecundario;
+
+        &:hover {
+            background-color: variaveis.$corTextoSecundario;
+            color: variaveis.$corDeFundo;
+        }
+    }
+}
+
